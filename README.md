@@ -42,7 +42,7 @@ The `useDocuments` hook manages document-related logic, including file processin
 3. Set up environment variables:
    - Rename `.env.example` to `.env.local`   
    - `OPENAI_API_KEY`: Your OpenAI API key
-4. Run the development server: `npm run dev`
+4. Run the development server: `pnpm dev`
 
 ## Usage
 
