@@ -1,10 +1,10 @@
 # Chat with Files
 
-Chat with Files is an advanced chatbot application that allows users to interact with a GPT-powered AI while providing context through various file types. This project leverages the Vercel SDK for seamless deployment and integration.
+Chat with Files is an advanced chatbot application that allows users to interact with an AI while providing context through various file types. This project leverages the Vercel AI SDK for seamless chat functionality.
 
 ## Main Features
 
-1. **Vercel SDK Integration**: Utilizes the Vercel SDK to create and deploy the chatbot, ensuring optimal performance and scalability.
+1. **Vercel AI SDK Integration**: Utilizes the Vercel AI SDK's `useChat` hook to create a powerful and efficient chatbot interface.
 
 2. **Dynamic Context Management**: Users can manually set context by uploading various file types, adding them to the conversation, and deleting them as needed.
 
@@ -20,20 +20,6 @@ Chat with Files is an advanced chatbot application that allows users to interact
 5. **Efficient Token Utilization**: Minimizes token usage by leveraging blob URLs for file references.
 
 6. **Image Processing**: Converts image files to base64 for efficient storage and retrieval.
-
-## Technical Implementation
-
-The project uses React for the frontend and Next.js for the backend. Here's a brief overview of the main components:
-
-- `ChatWithFiles`: The main component orchestrating the chat interface and file management.
-- `Header`: Manages the view switching between chat and documents.
-- `BackgroundAnimation`: Provides an animated background for visual appeal.
-- `ChatView`: Renders the chat messages.
-- `DocumentsView`: Displays and manages uploaded documents.
-- `InputSection`: Handles user input for messages and file uploads.
-- `DocumentPreviewDialog`: Allows users to preview uploaded documents.
-
-The `useDocuments` hook manages document-related logic, including file processing and storage.
 
 ## Setup and Installation
 
