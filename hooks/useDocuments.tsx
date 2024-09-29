@@ -13,7 +13,7 @@ const imgToBase64 = (file: File) =>
     });
 
 export function useDocuments() {
-    const { setChatContext, setImageFiles, addDocument, deleteDocument, documents } = useDocumentStore();
+    const { setChatContext, setImageFiles, addDocument, deleteDocument, documents, imageFiles, removeChatContext } = useDocumentStore();
 
     const processFile = async (file: File) => {
         let content = '';
@@ -84,7 +84,18 @@ export function useDocuments() {
 
         if (documentToDelete) {
             deleteDocument(id);
-            setChatContext(documentToDelete.name, '');
+            removeChatContext(documentToDelete.name);  // Remove the key from chatContext
+
+            // If the document is an image, remove it from imageFiles
+            if (documentToDelete.type.startsWith('image/')) {
+                if (imageFiles) {  
+                    const remainingImages = Array.from(imageFiles).filter((file) => file.name !== documentToDelete.name);
+                    const dataTransfer = new DataTransfer();
+                    remainingImages.forEach((file) => dataTransfer.items.add(file));
+                    setImageFiles(dataTransfer.files);
+                }
+            }
+
             toast.success('File deleted successfully');
         }
     };
